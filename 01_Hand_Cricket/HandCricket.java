@@ -1,9 +1,8 @@
-import Conditions_Loops.WhileLoop;
 
 import java.util.Random;
 import java.util.Scanner;
 
-public class HandCricket {
+public class HandCricket{
 
     static void Hand_Cricket(){
         Scanner in = new Scanner(System.in);
@@ -216,7 +215,7 @@ public class HandCricket {
                     int compPick = rm.nextInt(11);
                     System.out.println(compPick);
                     compScore += compPick;
-                    for (int round = 0; userPick != compPick; round++) {
+                    for (int round = 0; compPick != userPick; round++) {
 
                         System.out.println("Enter Your Choice (From 1 to 10 ): ");
                         userPick = in.nextInt();
@@ -355,7 +354,7 @@ public class HandCricket {
 
         System.out.println("If You Want to Play Again.... ");
         System.out.println("\n\n_____________________________________________________________PRESS ( 0 ) : TO EXIT________________________________________________");
-        System.out.println("______________________________________PRESS ( 1 ) : TO REPLAY________________________________________________");
+        System.out.println("_____________________________________________________________PRESS ( 1 ) : TO REPLAY________________________________________________");
         int choiceOfUser = in.nextInt();
 
         if (choiceOfUser == 0){
