@@ -1,4 +1,3 @@
-import Conditions_Loops.WhileLoop;
 
 import java.util.Random;
 import java.util.Scanner;
