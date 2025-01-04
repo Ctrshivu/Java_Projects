@@ -1,8 +1,9 @@
+import Conditions_Loops.WhileLoop;
 
 import java.util.Random;
 import java.util.Scanner;
 
-public class HandCricket{
+public class HandCricket {
 
     static void Hand_Cricket(){
         Scanner in = new Scanner(System.in);
@@ -69,14 +70,86 @@ public class HandCricket{
                     System.out.println("Computer's Choice (From 1 to 10 ): ");
                     int compPick = rm.nextInt(11);
                     System.out.println(compPick);
-                    userScore += userPick;
+
+                    if (userPick > 10 ){
+                        System.out.println("You Have Entered Value That Is greater than 10 . So , The Number Will not be Added");
+                    } else if (userPick < 0) {
+                        System.out.println("You Have Entered Value That Is Less  than 0 . So , The Number Will not be Added");
+                    } else if (userPick == compPick) {
+
+//                                                          AFTER DUCK OUT
+
+                        System.out.println("_________________________Oh No!!!!!!!    You are Out_______________________________");
+                        System.out.println("___________________Now Its Computer's Turn To Bat_________________________\n");
+
+                        System.out.println("Enter Your Choice (From 1 to 10 ): ");
+                        userPick = in.nextInt();
+
+                        if (userPick > 10 ){
+                            System.out.println("You Have Entered Value That Is greater than 10 . So , The Number Will not be Added");
+                        } else if (userPick < 0) {
+                            System.out.println("You Have Entered Value That Is Less  than 0 . So , The Number Will not be Added");
+                        }else if (userPick == compPick) {
+                            System.out.println("_________________________Computer is Out_______________________________");
+                        }
+
+                        System.out.println("Computer's Choice (From 1 to 10 ): ");
+                        compPick = rm.nextInt(11);
+                        System.out.println(compPick);
+                        compScore1 += compPick;
+                        for ( int round = 0; userPick != compPick; round++) {
+
+                            System.out.println("Enter Your Choice (From 1 to 10 ): ");
+                            userPick = in.nextInt();
+                            if (userPick > 10 ){
+                                System.out.println("You Have Entered Value That Is greater than 10 . So , The Number Will not be Added");
+                            } else if (userPick < 0) {
+                                System.out.println("You Have Entered Value That Is Less  than 0 . So , The Number Will not be Added");
+                            }
+
+                            System.out.println("Computer's Choice (From 1 to 10 ): ");
+                            compPick = rm.nextInt(11);
+                            System.out.println(compPick);
+                            compScore += compPick;
+
+                            finalScore1 = compScore1 + compScore;
+                            System.out.println("____________________Computer's total Score is: " + finalScore1 + "____________________________");
+
+                            if (compPick == userPick) {
+                                System.out.println("The Total Score of the Computer is: " + finalScore1);
+                                System.out.println("\n________________________Total Score of The USER is: " + finalScore + "_______________________");
+                                System.out.println("\n________________________Total Score of The COMPUTER is: " + finalScore1 + "__________________");
+
+                                if (finalScore > finalScore1) {
+                                    System.out.println("After The Comparision Of the Total Score ! ");
+                                    System.out.println("________________Congratulation's You Won!!!!!!!!!!_________________");
+                                } else if (finalScore == finalScore1) {
+                                    System.out.println("__________The Match Is Draw , Try again Later________________");
+                                } else {
+                                    System.out.println("_____________Oh no!     Computer Won__________");
+                                }
+                            }
+
+                        }
+//                              ENDING OF DUCK OUT
+                    } else {
+                        userScore += userPick;
+                    }
+
                     for (int round = 0; userPick != compPick; round++) {
                         System.out.println("Enter Your Choice (From 1 to 10 ): ");
                         userPick = in.nextInt();
                         System.out.println("Computer's Choice (From 1 to 10 ): ");
                         compPick = rm.nextInt(11);
                         System.out.println(compPick);
-                        userScore1 += userPick;
+
+                        if (userPick > 10 ){
+                            System.out.println("You Have Entered Value That Is greater than 10 . So , The Number Will not be Added");
+                        } else if (userPick < 0) {
+                            System.out.println("You Have Entered Value That Is Less  than 0 . So , The Number Will not be Added");
+                        }else{
+                            userScore1 += userPick;
+                        }
 
                         finalScore = userScore + userScore1;
                         System.out.println("_______________________The Total Score of the User(You) is: " + finalScore + "_______________________________");
@@ -90,6 +163,13 @@ public class HandCricket{
 
                             System.out.println("Enter Your Choice (From 1 to 10 ): ");
                             userPick = in.nextInt();
+
+                            if (userPick > 10 ){
+                                System.out.println("You Have Entered Value That Is greater than 10 . So , The Number Will not be Added");
+                            } else if (userPick < 0) {
+                                System.out.println("You Have Entered Value That Is Less  than 0 . So , The Number Will not be Added");
+                            }
+
                             System.out.println("Computer's Choice (From 1 to 10 ): ");
                             compPick = rm.nextInt(11);
                             System.out.println(compPick);
@@ -98,6 +178,12 @@ public class HandCricket{
 
                                 System.out.println("Enter Your Choice (From 1 to 10 ): ");
                                 userPick = in.nextInt();
+                                if (userPick > 10 ){
+                                    System.out.println("You Have Entered Value That Is greater than 10 . So , The Number Will not be Added");
+                                } else if (userPick < 0) {
+                                    System.out.println("You Have Entered Value That Is Less  than 0 . So , The Number Will not be Added");
+                                }
+
                                 System.out.println("Computer's Choice (From 1 to 10 ): ");
                                 compPick = rm.nextInt(11);
                                 System.out.println(compPick);
@@ -136,14 +222,28 @@ public class HandCricket{
 
                     System.out.println("Enter Your Choice (From 1 to 10 ): ");
                     int userPick = in.nextInt();
+                    if (userPick > 10 ){
+                        System.out.println("You Have Entered Value That Is greater than 10 . So , The Number Will not be Added");
+                    } else if (userPick < 0) {
+                        System.out.println("You Have Entered Value That Is Less  than 0 . So , The Number Will not be Added");
+                    }
                     System.out.println("Computer's Choice (From 1 to 10 ): ");
                     int compPick = rm.nextInt(11);
                     System.out.println(compPick);
                     compScore1 += compPick;
+                    if (userPick == compPick){
+                        System.out.println("_____________________________Computer is out");
+                    }
                     for (int round = 0; userPick != compPick; round++) {
 
                         System.out.println("Enter Your Choice (From 1 to 10 ): ");
                         userPick = in.nextInt();
+                        if (userPick > 10 ){
+                            System.out.println("You Have Entered Value That Is greater than 10 . So , The Number Will not be Added");
+                        } else if (userPick < 0) {
+                            System.out.println("You Have Entered Value That Is Less  than 0 . So , The Number Will not be Added");
+                        }
+
                         System.out.println("Computer's Choice (From 1 to 10 ): ");
                         compPick = rm.nextInt(11);
                         System.out.println(compPick);
@@ -164,14 +264,29 @@ public class HandCricket{
                             System.out.println("Computer's Choice (From 1 to 10 ): ");
                             compPick = rm.nextInt(11);
                             System.out.println(compPick);
-                            userScore += userPick;
+
+                            if (userPick > 10 ){
+                                System.out.println("You Have Entered Value That Is greater than 10 . So , The Number Will not be Added");
+                            } else if (userPick < 0) {
+                                System.out.println("You Have Entered Value That Is Less  than 0 . So , The Number Will not be Added");
+                            }else {
+                                userScore += userPick;
+                            }
+
+
                             for (round = 0; userPick != compPick; round++) {
                                 System.out.println("Enter Your Choice (From 1 to 10 ): ");
                                 userPick = in.nextInt();
                                 System.out.println("Computer's Choice (From 1 to 10 ): ");
                                 compPick = rm.nextInt(11);
                                 System.out.println(compPick);
-                                userScore1 += userPick;
+                                if (userPick > 10 ){
+                                    System.out.println("You Have Entered Value That Is greater than 10 . So , The Number Will not be Added");
+                                } else if (userPick < 0) {
+                                    System.out.println("You Have Entered Value That Is Less  than 0 . So , The Number Will not be Added");
+                                }else {
+                                    userScore1 += userPick;
+                                }
 
                                 finalScore = userScore + userScore1;
 
@@ -179,7 +294,6 @@ public class HandCricket{
                                 if (userPick == compPick) {
                                     System.out.println("_______________________The Total Score of the User(You) is: " + finalScore + "_______________________________");
                                     System.out.println("\n________________________Total Score of The COMPUTER is: " + finalScore1 + "__________________");
-                                    System.out.println("________________________Total Score of The USER is: " + finalScore + "_______________________");
 
                                     if (finalScore1 > finalScore) {
                                         System.out.println("________________Computer Won ! Try Again Later_____________");
@@ -211,14 +325,31 @@ public class HandCricket{
 
                     System.out.println("Enter Your Choice (From 1 to 10 ): ");
                     int userPick = in.nextInt();
+
+
                     System.out.println("Computer's Choice (From 1 to 10 ): ");
                     int compPick = rm.nextInt(11);
                     System.out.println(compPick);
+
+                    if (userPick > 10 ){
+                        System.out.println("You Have Entered Value That Is greater than 10 . So , The Number Will not be Added");
+                    } else if (userPick < 0) {
+                        System.out.println("You Have Entered Value That Is Less  than 0 . So , The Number Will not be Added");
+                    }else if (compPick == userPick) {
+                        System.out.println("_________________________Computer is Out_______________________________");
+                    }
+
                     compScore += compPick;
                     for (int round = 0; compPick != userPick; round++) {
 
                         System.out.println("Enter Your Choice (From 1 to 10 ): ");
                         userPick = in.nextInt();
+                        if (userPick > 10 ){
+                            System.out.println("You Have Entered Value That Is greater than 10 . So , The Number Will not be Added");
+                        } else if (userPick < 0) {
+                            System.out.println("You Have Entered Value That Is Less  than 0 . So , The Number Will not be Added");
+                        }
+
                         System.out.println("Computer's Choice (From 1 to 10 ): ");
                         compPick = rm.nextInt(11);
                         System.out.println(compPick);
@@ -238,15 +369,31 @@ public class HandCricket{
                             System.out.println("Computer's Choice (From 1 to 10 ): ");
                             compPick = rm.nextInt(11);
                             System.out.println(compPick);
-                            userScore += userPick;
+
+                            if (userPick > 10 ){
+                                System.out.println("You Have Entered Value That Is greater than 10 . So , The Number Will not be Added");
+                            } else if (userPick < 0) {
+                                System.out.println("You Have Entered Value That Is Less  than 0 . So , The Number Will not be Added");
+                            }else if (userPick == compPick) {
+                                System.out.println("_________________________You are Out_______________________________");
+                            }else {
+                                 userScore += userPick;
+                            }
+
                             for (round = 0; userPick != compPick; round++) {
                                 System.out.println("Enter Your Choice (From 1 to 10 ): ");
                                 userPick = in.nextInt();
                                 System.out.println("Computer's Choice (From 1 to 10 ): ");
                                 compPick = rm.nextInt(11);
                                 System.out.println(compPick);
-                                userScore1 += userPick;
 
+                                if (userPick > 10 ){
+                                    System.out.println("You Have Entered Value That Is greater than 10 . So , The Number Will not be Added");
+                                } else if (userPick < 0) {
+                                    System.out.println("You Have Entered Value That Is Less  than 0 . So , The Number Will not be Added");
+                                }else {
+                                    userScore1 += userPick;
+                                }
                                 finalScore = userScore + userScore1;
                                 System.out.println("_______________________The Total Score of the User(You) is: " + finalScore + "_______________________________");
 
@@ -285,14 +432,30 @@ public class HandCricket{
                     System.out.println("Computer's Choice (From 1 to 10 ): ");
                     int compPick = rm.nextInt(11);
                     System.out.println(compPick);
-                    userScore += userPick;
+
+                    if (userPick > 10 ){
+                        System.out.println("You Have Entered Value That Is greater than 10 . So , The Number Will not be Added");
+                    } else if (userPick < 0) {
+                        System.out.println("You Have Entered Value That Is Less than 0 . So , The Number Will not be Added");
+                    }else if (userPick == compPick) {
+                        System.out.println("_________________________You are Out_______________________________");
+                    }else {
+                        userScore += userPick;
+                    }
                     for (int round = 0; userPick != compPick; round++) {
                         System.out.println("Enter Your Choice (From 1 to 10 ): ");
                         userPick = in.nextInt();
                         System.out.println("Computer's Choice (From 1 to 10 ): ");
                         compPick = rm.nextInt(11);
                         System.out.println(compPick);
-                        userScore1 += userPick;
+
+                        if (userPick > 10 ){
+                            System.out.println("You Have Entered Value That Is greater than 10 . So , The Number Will not be Added");
+                        }else if (userPick < 0){
+                            System.out.println("You Have Entered Value That Is Less  than 0 . So , The Number Will not be Added");
+                        }else {
+                            userScore1 += userPick;
+                        }
 
                         finalScore = userScore + userScore1;
                         System.out.println("_______________________The Total Score of the USER is: " + finalScore + " _______________________________\n");
@@ -304,14 +467,32 @@ public class HandCricket{
 
                             System.out.println("Enter Your Choice (From 1 to 10 ): ");
                             userPick = in.nextInt();
+
+
                             System.out.println("Computer's Choice (From 1 to 10 ): ");
                             compPick = rm.nextInt(11);
                             System.out.println(compPick);
+
+                            if (userPick > 10 ){
+                                System.out.println("You Have Entered Value That Is greater than 10 . So , The Number Will not be Added");
+                            }else if (userPick < 0 ){
+                                System.out.println("You Have Entered Value That Is Less than 0 . So , The Number Will not be Added");
+
+                            } else if (compPick == userPick) {
+                                
+                            }
+
                             compScore += compPick;
                             for (round = 0; userPick != compPick; round++) {
 
                                 System.out.println("Enter Your Choice (From 1 to 10 ): ");
                                 userPick = in.nextInt();
+                                if (userPick > 10 ){
+                                    System.out.println("You Have Entered Value That Is greater than 10 . So , The Number Will not be Added");
+                                } else if (userPick < 0) {
+                                    System.out.println("You Have Entered Value That Is Less  than 0 . So , The Number Will not be Added");
+                                }
+
                                 System.out.println("Computer's Choice (From 1 to 10 ): ");
                                 compPick = rm.nextInt(11);
                                 System.out.println(compPick);
@@ -351,10 +532,9 @@ public class HandCricket{
         Scanner in=new Scanner(System.in);
 
         Hand_Cricket();
-
         System.out.println("If You Want to Play Again.... ");
         System.out.println("\n\n_____________________________________________________________PRESS ( 0 ) : TO EXIT________________________________________________");
-        System.out.println("_____________________________________________________________PRESS ( 1 ) : TO REPLAY________________________________________________");
+        System.out.println("_____________________________________________________________PRESS ( 1 ) : TO REPLAY________________________________________________\n");
         int choiceOfUser = in.nextInt();
 
         if (choiceOfUser == 0){
